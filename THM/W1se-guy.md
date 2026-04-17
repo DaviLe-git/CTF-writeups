@@ -4,6 +4,7 @@
 
 * **Platform:** TryHackMe
 * **Difficulty:** Easy
+* **Date:** March 2026
 * **Objective:** Recover two flags from an XOR-encrypted TCP service
 
 W1se Guy is a cryptography challenge that presents a TCP service on port 1337. Upon connection, the server issues a dynamically generated XOR-encoded ciphertext and prompts for the encryption key. The challenge revolves around performing a **known-plaintext attack** to recover the repeating XOR key and decrypt both flags. Source code for the service was provided as part of the challenge.
