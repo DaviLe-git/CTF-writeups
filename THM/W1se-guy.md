@@ -1,4 +1,4 @@
-# 🛡️ CTF Writeup — W1se Guy
+# CTF Writeup — W1se Guy
 
 ## 📌 Overview
 
