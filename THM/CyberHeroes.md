@@ -132,11 +132,3 @@ Upon submitting these credentials in the login form, the function constructed a 
 
 ---
 
-## 📝 Editor's Notes
-
-The following gaps were identified in the original notes. Review and fill in as needed before publishing:
-
-1. **No Nmap scan documented** — The original notes jump directly to browser interaction. If a port scan was performed, include the command and output. If not, consider adding a brief note explaining why it was skipped (e.g., the challenge provided a direct URL).
-2. **Burp Suite interception** — The intercepted request shown is a GET for the login page itself, not a credential submission. Consider clarifying this in your own words: the key finding was the *absence* of a credential POST, which directed attention to client-side logic.
-3. **Initial page** — You noted the landing page had nothing of interest. A single line describing what was visible (e.g., a splash page, a nav menu) would add completeness.
-4. **`If-None-Match` header** — You flagged this header as interesting in your notes but did not follow up on it. If it turned out to be irrelevant, you can safely omit it. If you investigated further, include those findings.
