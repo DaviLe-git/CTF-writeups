@@ -6,4 +6,5 @@
 | CyberHeroes | TryHackMe | Easy | Login Bypass | March 2026 |
 | Brooklyn NineNine | TryHackMe | Easy | Steganography | April 2026 |
 | Wonderland | TryHackMe | Medium | Multiple Privilege Escalation | April 2026 |
+| Mr Robot | TryHackMe | Medium | Exposed WordPress Installation | April 2026 |
 | ...      | ...       | ...  | ...           | ...      |
