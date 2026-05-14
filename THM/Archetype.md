@@ -1,4 +1,4 @@
-# 🛡️ CTF Writeup — Archetype
+# CTF Writeup — Archetype
 
 ## 📌 Overview
 
