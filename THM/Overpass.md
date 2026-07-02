@@ -281,6 +281,43 @@ thm{---}
 
 ---
 
+## Attack Flow
+
+```mermaid
+flowchart TD
+    A[Start Recon on THM target] --> B[Run RustScan]
+    B --> B1[Open ports 22 SSH and 80 HTTP]
+    B1 --> C[Web enumeration and page review]
+    C --> C1[Find admin endpoint and overpass.go source]
+    C1 --> D[Analyze login.js]
+    D --> D1[Client side auth relies on SessionToken cookie]
+    D1 --> E[Bypass by creating SessionToken manually]
+    E --> E1[Gain access to admin panel]
+    E1 --> F[Extract encrypted RSA private key]
+
+    F --> G[Crack passphrase offline]
+    G --> G1[Use ssh2john and john with rockyou]
+    G1 --> H[SSH access as user james]
+    H --> H1[Read user flag]
+
+    H1 --> I[Perform local enumeration]
+    I --> I1[Read .overpass and decode ROT47]
+    I1 --> I2[Recover credentials]
+    I2 --> J[Test sudo access no privileges]
+
+    J --> K[Inspect cron jobs]
+    K --> K1[Root cron runs curl overpass.thm/downloads/src/buildscript.sh pipe bash]
+    K1 --> L[Identify hijack path via hosts file]
+    L --> L1[Edit /etc/hosts to point overpass.thm to attacker]
+
+    L1 --> M[Host malicious buildscript on attacker machine]
+    M --> M1[Root cron fetches and executes payload]
+    M1 --> N[Payload creates SUID bash in tmp]
+    N --> O[Run /tmp/rootbash -p]
+    O --> O1[Obtain root shell]
+    O1 --> P[Read root flag]
+```
+
 ## 🧠 Lessons Learned
 
 - **Client-side authentication is not authentication.** When authorization logic lives entirely in JavaScript, any user can bypass it by manipulating browser state. Always enforce authentication server-side; the client cannot be trusted.
