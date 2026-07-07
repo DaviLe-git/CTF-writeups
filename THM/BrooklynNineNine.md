@@ -169,6 +169,39 @@ cat /root/root.txt
 ```
 
 ---
+## Attack Flow
+
+```mermaid
+flowchart TD
+    A[Start Recon on target] --> B[Run RustScan and Nmap]
+    B --> B1[Find ports 21 FTP 22 SSH 80 HTTP]
+    B1 --> C[Notice anonymous FTP login allowed]
+    C --> C1[Download note_to_jake.txt from FTP]
+    C1 --> C2[Extract usernames and weak password hint]
+
+    C2 --> D[Enumerate web content with ffuf]
+    D --> D1[No major directories found]
+    D1 --> E[Inspect index source code]
+    E --> E1[Find steganography hint in HTML comment]
+    E1 --> F[Analyze brooklyn99.jpg]
+
+    F --> F1[Check with exiftool and binwalk]
+    F1 --> F2[Use steghide info to confirm hidden data]
+    F2 --> G[Bruteforce passphrase with stegseek and rockyou]
+    G --> G1[Extract note.txt from image]
+    G1 --> G2[Recover SSH credentials for holt]
+
+    G2 --> H[SSH login as holt]
+    H --> H1[Read user flag]
+    H1 --> I[Run sudo -l]
+    I --> I1[Find NOPASSWD sudo on /bin/nano]
+
+    I1 --> J[Launch sudo nano]
+    J --> J1[Use nano command execution sequence]
+    J1 --> J2[Spawn interactive root shell]
+    J2 --> K[Confirm root with whoami]
+    K --> L[Read root flag]
+```
 
 ## 🧠 Lessons Learned
 
