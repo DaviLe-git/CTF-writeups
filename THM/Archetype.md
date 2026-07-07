@@ -209,6 +209,34 @@ type C:\Users\Administrator\Desktop\root.txt
 ```
 
 ---
+## Attack Flow
+
+```mermaid
+flowchart TD
+    A[Start Recon on target] --> B[Run RustScan]
+    B --> B1[Find ports 135 445 1433 5985]
+    B1 --> C[Prioritize SMB enumeration]
+    C --> C1[List shares with null session]
+    C1 --> C2[Find backups share accessible anonymously]
+    C2 --> D[Download prod.dtsConfig]
+    D --> D1[Extract SQL credentials ARCHETYPE sql_svc and password]
+
+    D1 --> E[Authenticate to MSSQL with mssqlclient.py]
+    E --> E1[Verify sql_svc is sysadmin]
+    E1 --> F[Enable xp_cmdshell via sp_configure]
+    F --> F1[Execute OS commands as archetype sql_svc]
+
+    F1 --> G[Transfer WinPEAS with PowerShell iwr]
+    G --> G1[Run WinPEAS and collect findings]
+    G1 --> H[Identify PSReadLine history file]
+    H --> H1[Read ConsoleHost_history.txt via xp_cmdshell]
+    H1 --> I[Recover administrator credentials in cleartext]
+
+    I --> J[Use Evil WinRM with administrator creds]
+    J --> J1[Obtain administrative shell]
+    J1 --> K[Read user flag]
+    K --> L[Read root flag]
+```
 
 ## 🧠 Lessons Learned
 
