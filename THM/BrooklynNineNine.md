@@ -1,4 +1,4 @@
-# 🛡️ CTF Writeup — Brooklyn Nine Nine
+# CTF Writeup — Brooklyn Nine Nine
 
 ## 📌 Overview
 
