@@ -304,16 +304,3 @@ flowchart TD
 * This writeup focuses on methodology and learning
 
 ---
-
-## Editor's Notes
-
-The following items are flagged for your review before publishing:
-
-- **Machine name assumed as "Vaccine"** based on the `postgres@vaccine` shell prompt and the overall attack chain (this is a known HTB machine). Please confirm this is correct.
-- **Difficulty level** was not stated in the notes; it was inferred as "Very Easy" from a fragment at the top of the raw notes (`- **Very Easy** - **Linux**`). Confirm this matches the actual HTB difficulty rating.
-- **Target IP** (`10.129.202.242`) and attacker IP (`10.10.14.77`) are included as they appeared in the raw notes — standard practice is to keep these since they're non-sensitive lab IPs, but flag if you'd prefer to redact them.
-- **SSH port (22)** was identified in the initial scan but never explored further in the notes — this is noted as unused in the writeup; confirm no SSH-based steps were omitted.
-- **Full raw Nmap/Rustscan service/version output** wasn't included in the notes beyond the open port list — if you have the full `-A` output (service banners, versions), it would strengthen the Enumeration section.
-- The **online MD5 cracking service** used to crack the password hash wasn't named in the notes (e.g., CrackStation) — confirm which tool/site was used so it can be named explicitly in the Tools Used section.
-- The **directory traversal / LFI attempt** was included as it reflects part of your genuine testing methodology (per your preference to show iterative thinking); let me know if you'd rather trim this as exploratory noise.
-- No **SUID/cron/LinPEAS automated enumeration output** was present in the notes — manual `find -perm -4000` was used instead; confirmed as accurate but flagging in case a LinPEAS run was performed and simply not pasted in.
