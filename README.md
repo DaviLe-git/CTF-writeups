@@ -4,6 +4,7 @@
 |--------|----------|------------|----------|------|
 | Archetype | HackTheBox | Very Easy | MSSQL | May 2026 |
 | Vaccine | HackTheBox | Very Easy | SQL Injection | May 2026 |
+| Cap | HacktheBox | Easy | PCAP analysis | May 2026 |
 | W1se Guy | TryHackMe | Easy | Cryptography | March 2026 |
 | CyberHeroes | TryHackMe | Easy | Login Bypass | March 2026 |
 | Brooklyn NineNine | TryHackMe | Easy | Steganography | April 2026 |
