@@ -26,6 +26,21 @@ CTF-writeups/
 
 Each writeup is a self-contained Markdown file named after the machine or room (e.g., HTB/Easy/connected.md).
 
+## Writeup Format
+
+Every report follows the same template:
+
+- **Overview** — platform, difficulty, objective
+- **Enumeration** — reconnaissance and service discovery
+- **Exploitation** — vulnerability identification and exploit walkthrough
+- **Privilege Escalation** — post-exploitation and root/admin path (marked N/A where not applicable)
+- **Attack Flow** — Mermaid diagram of the full chain
+- **Lessons Learned** — technical takeaways and real-world relevance
+- **Tools Used**
+
+Flags are intentionally omitted (`[USER_FLAG]` / `[ROOT_FLAG]` placeholders) — these writeups focus on methodology, not flag-hunting.
+
+## Writeups
 
 | Machine | Platform | Difficulty | Category | Date |
 |--------|----------|------------|----------|------|
@@ -42,3 +57,11 @@ Each writeup is a self-contained Markdown file named after the machine or room (
 | SSTI2 | PicoCTF | Medium | SSTI | July 2026 |
 | ORDER ORDER | PicoCTF | Hard | Second-order SQLi | July 2026 |
 | ...      | ...       | ...  | ...           | ...      |
+
+## Tools
+
+Nmap · RustScan · ffuf · Gobuster · sqlmap · Burp Suite · Netcat · Hydra · John the Ripper / ssh2john · fcrackzip · stegseek · CyberChef · Impacket · Evil-WinRM · LinPEAS / WinPEAS · GTFOBins
+
+## Disclaimer
+
+All writeups document activity performed against machines and challenges from authorized, legal platforms (Hack The Box, TryHackMe, picoCTF) for educational purposes only.
