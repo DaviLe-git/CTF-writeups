@@ -1,5 +1,10 @@
 # CTF Writeups
 
+A collection of penetration testing writeups from Hack The Box, TryHackMe, and picoCTF, documenting methodology, exploitation, and privilege escalation across a range of vulnerability classes.
+
+Each writeup follows a consistent structure — enumeration, exploitation, privilege escalation, lessons learned — with an attack-flow diagram and a full breakdown of tools and reasoning. The goal is reproducibility: another reader should be able to follow the same path from initial recon to full compromise.
+
+
 | Machine | Platform | Difficulty | Category | Date |
 |--------|----------|------------|----------|------|
 | Archetype | HackTheBox | Very Easy | MSSQL | May 2026 |
