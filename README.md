@@ -8,7 +8,7 @@ Each writeup follows a consistent structure — enumeration, exploitation, privi
 Structure
 
 Writeups are organized by platform, then by difficulty:
-
+```
 CTF-writeups/
 ├── HTB/
 │   ├── Very Easy/
@@ -22,6 +22,7 @@ CTF-writeups/
 │   ├── Medium/
 │   └── Hard/
 └── README.md
+```
 
 Each writeup is a self-contained Markdown file named after the machine or room (e.g., HTB/Easy/connected.md).
 
