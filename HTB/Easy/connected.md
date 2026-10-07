@@ -1,6 +1,6 @@
 #  CTF Writeup — Connected
 
-## 📌 Overview
+##  Overview
 
 * Platform: Hack The Box
 * Difficulty: Easy
@@ -10,7 +10,7 @@ Connected is a Linux machine centered on a FreePBX 16.0.40.7 installation. Initi
 
 ---
 
-## 🔍 Enumeration
+## Enumeration
 
 ### 1. Initial Reconnaissance
 
@@ -57,7 +57,7 @@ Two public proof-of-concept references were used to inform exploitation:
 
 ---
 
-## 💥 Exploitation
+## Exploitation
 
 * **Type:** SQL Injection → Remote Code Execution (CVE-2025-57819)
 * **Location:** `/admin/ajax.php` — `FreePBX\modules\endpoint\ajax` module, `brand` parameter
@@ -229,7 +229,7 @@ flowchart TD
 
 ---
 
-## 🧠 Lessons Learned
+## Lessons Learned
 
 * **Version fingerprinting drives exploit research.** Identifying the exact FreePBX version (16.0.40.7) early made it possible to pinpoint a recently disclosed, unauthenticated SQLi-to-RCE chain (CVE-2025-57819) rather than resorting to blind fuzzing.
 * **Error-based SQLi is a fast confirmation technique.** Using `EXTRACTVALUE()` to leak `SELECT USER()` through a MySQL error message provided immediate, unambiguous confirmation of the injection point before committing to a full exploit chain.
@@ -239,7 +239,7 @@ flowchart TD
 
 ---
 
-## 🧩 Tools Used
+## Tools Used
 
 * RustScan
 * CVE-2025-57819 Python PoC (K3ysTr0K3R)
@@ -250,7 +250,7 @@ flowchart TD
 
 ---
 
-## ⚠️ Notes
+## Notes
 
 * Flags are intentionally omitted
 * This writeup focuses on methodology and learning
