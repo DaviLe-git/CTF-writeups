@@ -124,7 +124,7 @@ This resulted in a reverse shell as the `asterisk` user:
 
 ---
 
-## 🔓 Privilege Escalation
+## Privilege Escalation
 
 ### Local Enumeration
 
