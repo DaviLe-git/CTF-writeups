@@ -527,7 +527,7 @@ graph TD
     D --> E[CVE-2026-33017\nUnauthenticated RCE\nPOST /api/v1/build_public_tmp]
     E --> F[Reverse Shell as www-data]
     F --> G[/etc/langflow/.env\nSuperuser Credentials in Plaintext]
-    G --> H[SSH Password Reuse → nightfall\nUser Flag Retrieved]
+    G --> H[SSH Password Reuse -> nightfall\nUser Flag Retrieved]
     H --> I[~/.mcp/config.json\nMCP Registry Credentials Recovered]
     I --> J[GET /api/v1/version\nJWT none Algorithm Advertised]
     J --> K[Forged JWT — alg: none\nrole: admin Claim]
